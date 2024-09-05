@@ -10,9 +10,9 @@ from tqdm import tqdm
 from scipy import stats
 from sklearn import metrics
 
-from .data import ChromoformerDataset
-from .net import ChromoformerClassifier, ChromoformerRegressor
-from .util import seed_everything
+from chromoformer.data import ChromoformerDataset
+from chromoformer.net import ChromoformerClassifier, ChromoformerRegressor
+from chromoformer.util import seed_everything
 
 
 torch.autograd.set_detect_anomaly(True)

@@ -54,8 +54,10 @@ rule download_chip_tagalign:
     conda:
         'environment.yaml'
     benchmark: 'benchmarks/download_chip_tagalign/{eid}-{mark}.tsv'
+    # shell:
+    #     'wget "https://egg2.wustl.edu/roadmap/data/byFileType/alignments/consolidated/{wildcards.eid}-{wildcards.mark}.tagAlign.gz" -O- | gunzip -c > {output}'
     shell:
-        'wget "https://egg2.wustl.edu/roadmap/data/byFileType/alignments/consolidated/{wildcards.eid}-{wildcards.mark}.tagAlign.gz" -O- | gunzip -c > {output}'
+          'gunzip -c "hist/{wildcards.eid}-{wildcards.mark}.tagAlign.gz" > {output}'
 
 rule bedtobam:
     input: 'hist/{eid}-{mark}.tagAlign'

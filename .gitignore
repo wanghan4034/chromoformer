@@ -14,3 +14,6 @@ wandb/
 .snakemake/
 *_frag2neighbors.pickle
 *_pair2score.pickle
+.vscode/launch.json
+checkpoints
+preprocessing/run.log
